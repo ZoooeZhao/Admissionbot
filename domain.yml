@@ -1,0 +1,353 @@
+version: "3.1"
+
+session_config:
+ session_expiration_time: 60
+ carry_over_slots_to_new_session: true
+ 
+intents:
+- greet
+- goodbye
+- affirm
+- deny
+- bot_challenge
+- thanks
+- out_of_domain
+- nlu_fallback
+- mood_good
+- mood_bad
+- close_bot
+- start_over
+- jack
+- fun_fact
+- request_agent
+- president
+- founding_date
+# transfer intents
+- transfer_interview
+- transfer_reqmaterials
+- transfer_appnumbers
+- transfer_expectations
+# dates and deadlines intents
+- dates_earlyaction
+- dates_regulardecision
+- dates_replydate
+- dates_international
+- dates_transfers
+- dates_accepted
+- dates_general
+# application requirements intents
+- appreqs_interview
+- appreqs_reqdocs
+- appreqs_grades
+# admissions statistics intents
+- stats_admitted
+# international students intents
+- international_interview
+- international_reqdocs
+- international_appnumbers
+- international_tests
+# contact intents
+- contact_phone
+- contact_address
+- contact_email
+- contact_general
+# housing intents
+- housing_fr
+- housing_upperclass
+- housing_offcampus
+- housing_requirement
+# student life intents
+- studentlife_clubs
+- studentlife_sports
+- studentlife_athletics
+- studentlife_studies
+- studentlife_arts
+- studentlife_general
+# financial aid intents
+- financial_aid
+# visit intents
+- visit_campus
+# new categories from feedback
+- tuition
+- mealplan
+- transportation
+- diversity
+
+responses:
+# basic utterances
+
+  utter_greet:
+  - text: "Hi, I'm Jack the Bulldog, the official mascot of Georgetown University! I'm here to answer your questions for the Undergraduate Admissions Paw-ffice. How are you today?"
+    image: "https://i.imgur.com/Q8IIMMR.jpg"
+
+  utter_goodbye:
+  - text: "Goodbye! Here’s a fun fact before you go: "
+  - text: "Thanks for chatting! Here’s a fun fact before you go: "
+
+  utter_iamabot:
+  - text: "I am Jack, your dearest friend!"
+
+  utter_confirm:
+  - text: "Did that answer your question?"
+  - text: "Did I offer you the correct information?"
+  - text: "Was that helpful information?"
+
+  utter_please_rephrase:
+  - text: "Paw-don me, I didn't understand your request. Could you rephrase that?"
+  - text: "I a-paw-logize, i didn't understand your request. Could you rephrase that?"
+  utter_didnot_answer:
+  - text: "Sorry I didn't help. You may want to rephrase your question or you can visit our Admissions Website (https://uadmissions.georgetown.edu) and use the search bar to find information about your desired topic. Alternatively, you can contact the admissions office directly at (202) 687-3600 or guadmiss@georgetown.edu"
+  utter_askmorehelp:
+  - text: "Do you have any more questions?"
+
+  utter_howcanihelp:
+   - text: "How can I help?"
+
+  utter_sorry:
+  - text: "Sorry to see you leave :( Here’s a fun fact before you go: "
+    image: "https://i.imgur.com/U4v5Dqw.jpg"
+  - text: "Sorry I couldn't be of more help :( Here’s a fun fact before you go: "
+    image: "https://i.imgur.com/U4v5Dqw.jpg"
+
+  utter_urwelcome:
+   - text: "You're welcome!"
+   - text: "Glad I can help!"
+   - text: "No problem!"
+   - text: "Of course!"
+
+  utter_great:
+   - text: "Great!"
+   - text: "Wonderful!"
+   - text: "Perfect!"
+   - text: "That’s great to hear!"
+   - text: "That’s wonderful to hear!"
+   - text: "That’s good to hear!"
+   - text: "That’s what I like to hear!"
+
+  utter_out_of_domain:
+   - text: "I'm sorry, I cannot answer your question. I encourage you to visit our Admissions Website (https://uadmissions.georgetown.edu) and use the search bar to find information about your desired topic. Alternatively,you can contact the admissions office directly at (202) 687-3600 or guadmiss@georgetown.edu"
+
+  utter_default:
+   - text: "Paw-don me, I didn’t get that. Can you rephrase please?"
+   - text: "Please fur-give me, I didn’t get that. Can you rephrase that?"
+
+
+  utter_followup:
+   - text: "If you have additional questions, please ask them now. If not, please say goodbye to end the chat!"
+   - text: "If you any more questions, please ask them now. If not, please say goodbye to end the chat!"
+
+
+  utter_listoftopics:
+   - text: "You can ask me any questions related to the following topics: transfer student applications, application dates and deadlines, application requirements, admission statistics, housing, student life, financial aid, international students, campus visits, and contact information."
+
+  utter_askfunfact:
+  - text: "You can also say 'fun fact' to ask for a fun fact about Georgetown."
+
+  utter_funfact:
+   - text: "Georgetown’s mantra “Hoya Saxa” literally means “What Rocks” in Latin! If you’re asking yourself “What’s a Hoya?” check out this article: https://www.hoyasaxa.com/sports/hoia.htm!"
+     image: "https://i.imgur.com/zSqTfmV.jpg"
+   - text: "Actor Bradley Cooper graduated from Georgetown in 1997 with a degree in English! Here he is with the President of Georgetown, John DeGioia!"
+     image: "https://i.imgur.com/oHMJCSK.jpg"
+   - text: "The Georgetown Women’s Squash team began their first varsity campaign in Fall 2021. Here I am with the team! Hoya Saxa :)"
+     image: "https://i.imgur.com/8Mbf8vT.jpg"
+   - text: "The Georgetown Men’s Soccer team won the NCAA Championships in Fall 2019. Hoya Saxa!"
+     image: "https://i.imgur.com/zSqTfmV.jpg"
+   - text: "Georgetown's official school colors are blue and gray, which happens to be the name of our Tour Guide Society!"
+     image: "https://i.imgur.com/Pulil2X.jpg"
+   - text: "The Georgetown Men's Basketball team plays all their home games at Capital One Arena!"
+     image: "https://i.imgur.com/C31ctF1.jpg"
+   - text: "One Georgetown superstition is that if you step on the seal (at the top of the steps of Healy Hall), you won't graduate on time!"
+     image: "https://i.imgur.com/InDRtjF.jpg"
+   - text: "Former U.S. President Bill Clinton graduated from Georgetown's School of Foreign Service in 1968 and delivered the commencement address in 1980!"
+     image: "https://i.imgur.com/OYmPUQz.jpg"
+
+  utter_jack:
+   - text: "I am 3 years old (almost 4) in human years!"
+   - text: "I weigh 64 pounds!"
+   - text: "I was born in Canada but came to Georgetown in July 2019!"
+   - text: "I like to play with my dog friends, chase sports balls and falling leaves, play with my toy armadillo, and watch Hoya athletics!"
+   - text: "My favorite food is blueberries and strawberries!"
+   - text: "I love to hang out at Koi pond by White Gravenor or at the Alumni House courtyard!"
+
+  utter_mood_good_response:
+   - text: "That’s great to hear! I am happy to be here to answer your questions, so let’s get to it."
+   - text: "I'm glad to hear! I am excited to be here to answer your questions, so let’s get to it."
+   - text: "That's paw-some to hear! I am happy to be here to answer your questions, so let’s get to it."
+
+  utter_mood_bad_response:
+   - text: "I’m sorry to hear that. I am happy to be here to answer your questions, so hopefully I can make your day better! Let’s get to it."
+
+  utter_request_agent:
+  - text: "I’m sorry I couldn't be more help :( To speak with someone in the Admissions Office directly, please call (202) 687-3600."
+    image: "https://i.imgur.com/4Uu4HBM.jpg"
+
+  utter_president:
+    - text: "The current president of Georgetown University is John J. DeGioia! To learn more about him, please visit https://president.georgetown.edu/biography/."
+
+  utter_founding_date:
+    - text: "Georgetown University was founded in 1789. For more information about the university's history, you can check out https://www.georgetown.edu/who-we-are/our-history/!"
+
+  # transfer responses
+
+  utter_transfer_interview:
+   - text: "Alumni interviews are optional for transfer applicants. If an alumni interviewer is available, interviews typically occur between late February and very early April. For more information, you can visit https://uadmissions.georgetown.edu/alumni-interview. Don't stress too much about it, I'm sending you pawsitive vibes!"
+     image: "https://i.imgur.com/swPoJA0.jpg"
+
+  utter_transfer_reqmaterials:
+   - text: "Prospective transfer students first need to complete the Transfer Application form, which creates your application file. You will also need to pay the $75.00 application fee (or a completed fee waiver). Next, complete the Transfer Application Supplement. Lastly, submit your official college transcripts from your current institution and any previously attended institution(s), a Dean’s Report from your current college/university, a Professor’s Report from a professor (preferably in major area of study), a Secondary School Report (include your high school transcript), and SAT/ACT results (this is waived for applicants who graduated from high school five or more years prior to intended matriculation at Georgetown). For more information, you can visit https://uadmissions.georgetown.edu/applying/transfer-application/"
+
+  utter_transfer_appnumbers:
+   - text: "The number of students admitted through our transfer process varies each year depending on space. The Admissions Office evaluates roughly 2,500 applications."
+
+  utter_transfer_expectations:
+   - text: "Admitted transfer students come from a variety of institutions including community colleges and four-year colleges and universities. The average college GPA for an admitted transfer applicant is approximately 3.8 – 3.9, and most transfer students were in the top 10-20% of their graduating high school class. Nonetheless, we are committed to a holistic admission process, and transfer files are reviewed by Admission Committees."
+
+  # dates responses
+
+  utter_dates_earlyaction:
+   - text: "The deadline for Early Action applications is November 1, 2022, and the results will be announced on December 15, 2022. Sending you pawsitive vibes for your application!"
+     image: "https://i.imgur.com/ZORBhvw.jpg"
+
+  utter_dates_regulardecision:
+   - text: "The deadline for Regular Decision applications is January 10, 2023, and the results will be announced on April 1, 2023. Sending you pawsitive vibes for your application!"
+     image: "https://i.imgur.com/ZORBhvw.jpg"
+
+  utter_dates_replydate:
+   - text: "Accepted students must notify the university of their decision by May 1, 2023. I hope you choose to get your degree with me on the hilltop!"
+     image: "https://i.imgur.com/InDRtjF.jpg"
+
+  utter_dates_transfers:
+   - text: "All components of the Transfer Application are due by March 1, 2023. Acceptance results will be announced on June 1. I hope you get your degree with me!"
+     image: "https://i.imgur.com/InDRtjF.jpg"
+
+  utter_dates_international:
+   - text: "International students can apply for early action or regular decision. The deadline for Early Action applications is November 1, 2022 and the deadline for Regular Decision applications is January 10, 2023. Don't miss the deadline!"
+     image: "https://i.imgur.com/InDRtjF.jpg"
+
+  utter_dates_accepted:
+   - text: "Early Action results will be announced on December 15, 2022 and Regular Decision results will be announced on April 1, 2023. The date is approaching."
+
+  utter_dates_general:
+   - text: "For information regarding dates and deadlines, please visit https://uadmissions.georgetown.edu/applying/first-year-application/. Alternatively, try to ask me a question about a more specific deadline!"
+
+  # application requirements responses
+
+  utter_appreqs_interview:
+   - text: "All first year applicants are required to go through an interview, unless there are no alumni available to conduct interviews in a particular geographic region. Please visit our page on Alumni Interviews at https://uadmissions.georgetown.edu/alumni-interview/. Don't stress too much about it, I'm sending you pawsitive vibes!"
+     image: "https://i.imgur.com/swPoJA0.jpg"
+
+  utter_appreqs_reqdocs:
+   - text: "After submitting the Georgetown Application Form, applicants must submit the Application Supplement, Secondary School Report, Teacher’s Recommendation, SAT/ACT Results, and SAT Subject Tests Scores (if taken prior to January 2021). Please note that there is a $75.00 application fee and that Georgetown does not use the Common Application. For more information regarding the first-year application, please check out the following information document: https://georgetown.app.box.com/s/2tuyrmxdzz6bvpj0d8dza5tileyrpw23."
+
+  utter_appreqs_grades:
+    - text: "Because the Admissions Committee takes a wholistic view of candidates, there are no particular SAT, ACT, or GPA requirements. That being said, you can see the Class of 2026 Student Profile here (https://georgetown.app.box.com/s/z4tgwmps28jo4hd83i1migipgjw43uuo) to see the test scores and grades of our new students."
+
+  # admissions statistics responses
+  utter_stats_admitted:
+   - text: "For more information about any statistics of the admissions process, please view the following document: https://georgetown.app.box.com/s/z4tgwmps28jo4hd83i1migipgjw43uuo."
+
+  # international students responses
+  utter_international_interview:
+   - text: "All first-year applicants are required to have an interview unless it is not possible to assign the interview based on geographic area. Interviews are available in most parts of the 50 states, Puerto Rico, the U.S. Virgin Islands, and in many foreign countries. Don't stress too much about it, I'm sending you pawsitive vibes!"
+     image: "https://i.imgur.com/swPoJA0.jpg"
+
+  utter_international_reqdocs:
+   - text: "International applicants complete the same application as domestic applicants. After submitting the Georgetown Application Form, applicants must submit the Application Supplement,Secondary School Report, Teacher’s Recommendation,SAT/ACT Results, and SAT Subject Tests Scores (if taken prior to January 2021). Please note that there is a $75.00 application fee. For more information about applying as an international student, please visit https://uadmissions.georgetown.edu/applying/international/#ApplicationProcedure"
+
+  utter_international_appnumbers:
+   - text: "Georgetown is home to over 3,300 international students (undergraduate and graduate) from more than 135 countries. 11% of the Class of 2026 are international students. Guess where I come from?"
+
+  utter_international_tests:
+   - text: "Standardized test scores are required for the International Student Application. The SAT Code is 5244 and the ACT Code is 0668. Please visit our International Student Application page at https://uadmissions.georgetown.edu/applying/international/ for more information regarding tests and the application."
+
+  # contact responses
+  utter_contact_phone:
+   - text: "You can reach the Admissions Office by phone at (202) 687-3600 between 9am and 5pm (EST), Monday through Friday with the exception of State and Federal holidays. Here's me in front of White Gravenor, the building that houses the Admissions Office!"
+     image: "https://i.imgur.com/hBn6cY1.jpg"
+
+  utter_contact_address:
+   - text: "The address is Georgetown University / Office of Undergraduate Admissions / Room 103 White Gravenor Hall / 37th and O Streets, NW / Washington, D.C. 20057-1002. Here's me in front of White Gravenor, the building that houses the Admissions Office!"
+     image: "https://i.imgur.com/hBn6cY1.jpg"
+
+  utter_contact_email:
+   - text: "You can email us at guadmiss@georgetown.edu. Here's me in front of White Gravenor, the building that houses the Admissions Office!"
+     image: "https://i.imgur.com/hBn6cY1.jpg"
+
+  utter_contact_general:
+   - text: "I would love to give you our office's contact information. Would you like a phone number or email? Btw, here's me in front of White Gravenor, the building that houses the Admissions Office!"
+     image: "https://i.imgur.com/hBn6cY1.jpg"
+
+  # housing responses
+
+  utter_housing_fr:
+   - text: "There are 5 first-year student dorms: Harbin, New South, Copley, Reynolds and Darnall. For more information regarding student housing, please visit https://www.georgetown.edu/campus-city/campus-life/housing/ or https://residentialliving.georgetown.edu/2023-25-residential-impacts/ for updates that may be during your time on the Hilltop. Guess where I live?"
+
+  utter_housing_upperclass:
+   - text: "There are many upperclassmen living communities, including Arrupe Hall, Henle Village, Ida Ryan & Isaac Hawkins Hall (aka Jes Res), Kennedy Hall, LXR, McCarthy Hall, Nevils, Townhouses, Village A (aka Vil A), Alumni Square (aka Vil B), Village C East (aka VCE), and Village C West (aka VCW). These include traditional dorm-style, suite-style, and apartment-style buildings. For more information about upperclassmen housing, please visit: https://residentialliving.georgetown.edu/communities/. Here's me in front of some townhouses that students live in :)"
+     image: "https://i.imgur.com/VeSq32V.jpg"
+
+  utter_housing_offcampus:
+   - text: "Many students live off campus, especially juniors and seniors. Students often obtain leases for townhouses in the West Georgetown and Burleith neighborhoods. Here I am in front of some Georgetown townhouses!"
+     image: "https://i.imgur.com/VeSq32V.jpg"
+
+  utter_housing_requirement:
+    - text: "Georgetown University requires all undergraduate students who are regularly admitted and in full-time attendance at the University live on campus during their first-year, sophomore and junior years, unless specifically exempted from the requirement by the Director of Residential Services or their designee. All students residing in on-campus housing are bound by the terms of the Housing Occupancy Agreement. Please visit https://residentialliving.georgetown.edu/living/policies/ for more information."
+
+  utter_housing_update:
+    - text: "I would also like to give you a heads up that the University is making some residency changes in 2023-2025 (yay, new housing!) so these policies may change. You can find more information at https://residentialliving.georgetown.edu/2023-25-residential-impacts/."
+
+  utter_housing_roommates:
+    - text: "For specific information regarding roommates, please visit https://residentialliving.georgetown.edu/apply/new/charms/."
+
+  # student life responses
+
+  utter_studentlife_clubs:
+   - text: "Georgetown has more than 350 student clubs, ranging from affinity groups to career interests and sports. My favorite group on campus is the 'Jack Crew,' a group of students that walk me throughout the day (or take me out to ballgames) :) For more information, please visit https://www.georgetown.edu/campus-city/campus-life/clubs-organizations/."
+     image: "https://i.imgur.com/ucpJ2vJ.jpg"
+
+  utter_studentlife_sports:
+   - text: "Georgetown has varsity, club, and intramural sports teams. My favorite sport to play is soccer because I love to dribble the ball on Cooper or Shaw Field :) For information on club and intramural sports, please visit https://recreation.georgetown.edu/programs/club-sports/. For information on varsity sports, please visit https://guhoyas.com/index.aspx"
+     image: "https://i.imgur.com/cmdFVti.jpg"
+
+  utter_studentlife_athletics:
+   - text: "Georgetown is home to 24 varsity sports teams. Most teams compete in the Big East Conference (NCAA D1), but some teams compete in the Patriot League. To learn more about Georgetown Athletics, please visit https://guhoyas.com/. If you come to a Men's Basketball Game, you'll see me ride my skateboard or car during halftime :)"
+     image: "https://i.imgur.com/Byszf1j.jpg"
+
+  utter_studentlife_studies:
+   - text: "Georgetown University has 5 undergraduate schools: the College (COL), the McDonough School of Business (MSB), the Walsh School of Foreign Service (SFS), the School of Nursing, and the School of Health. For information regarding specific areas of study (majors and minors), please visit https://www.georgetown.edu/academics/areas-of-study/."
+
+  utter_studentlife_arts:
+   - text: "Georgetown offers four academic programs for performing arts: Music, Theater and Performance Studies, Dance, and Public Speaking. To learn more about these programs, please visit https://performingarts.georgetown.edu/academics/ and check out the events calendar at https://performingarts.georgetown.edu/events-and-tickets/!"
+
+  utter_studentlife_general:
+   - text: "There are many ways that students can engage on campus! Ask me about clubs or sports!"
+     image: "https://i.imgur.com/1jYjr7G.jpg"
+
+  # financial aid responses
+
+  utter_financial_aid:
+   - text: "For information regarding financial aid, please check https://uadmissions.georgetown.edu/financial-aid/."
+
+  # visit responses
+
+  utter_visit_campus:
+   - text: "To schedule a virtual or in-person visit, please visit https://uapply.georgetown.edu/portal/virtualsession#_ga=2.141322612.77056782.1670379378-1321797015.1665931534. We would love to see you on the Hilltop, and maybe you'll see me walking around!"
+     image: "https://i.imgur.com/JN42ok9.jpg"
+
+  # new category responses
+
+  utter_tuition:
+   - text: "Georgetown's undergraduate tuition (full-time, per semester) is $30,936.00. Please visit https://bulletin.georgetown.edu/expenses-and-financialassistances/basicgeneralexpenses/ for more information. Feel free to ask me about financial aid options!"
+
+  utter_mealplan:
+    - text: "All first-year students are required to have a meal plan. There are many options, such as All Access, 14 Weekly, and 7 Weekly. These plans come with Flex Dollars, money linked to your student account that you can use to pay for snacks, coffee, and other meals around campus! For more information regarding meal plans, please visit https://www.hoyaeats.com/meal-plans/."
+
+  utter_transportation:
+    - text: "Georgetown offers the Georgetown University Transportation Shuttle (GUTS) buses that run on 6 routes (Arlington, Downtown Campus, Dupont Circle, Law Center, Rosslyn, and Wisconsin Avenue) during the weekdays. For more information about the routes and schedules, please visit https://transportation.georgetown.edu/guts/."
+
+  utter_diversity:
+    - text: "Georgetown is one of the most geographically diverse student populations in the country, representing every state and over 130 foreign countries. 47% of the Class of 2026 is from international or multi-cultural backgrounds. To learn about diversity at Georgetown, please visit https://www.georgetown.edu/campus-city/campus-life/community-diversity/."
+
+entities:
+  - housing
+  - activities

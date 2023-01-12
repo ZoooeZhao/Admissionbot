@@ -1,0 +1,785 @@
+version: "3.1"
+
+nlu:
+  - intent: fun_fact
+    examples: |
+      - fun fact
+      - give me a fun fact
+      - funfact
+
+  - intent: greet
+    examples: |
+      - hey
+      - hello
+      - hi
+      - hola
+      - hello there
+      - good morning
+      - good evening
+      - hey there
+      - good afternoon
+
+  - intent: goodbye
+    examples: |
+      - bye
+      - goodbye
+      - have a nice day
+      - bye bye
+      - see you later
+      - thanks bye
+      - thank you bye
+      - thanks goodbye
+      - goodbye thank you
+      - goodbye thanks
+      - bye jack
+      - goodbye jack the bulldog
+      - goodbye jack
+      - thanks for chatting jack
+
+  - intent: affirm
+    examples: |
+      - yes
+      - yeah
+      - ya
+      - yup
+      - indeed
+      - of course
+      - that sounds good
+      - correct
+      - sure
+      - cool
+      - that's cool
+
+  - intent: deny
+    examples: |
+      - no
+      - nope
+      - never
+      - I don't think so
+      - don't like that
+      - no way
+      - not really
+      - nah
+      - no thanks
+      - no thank you
+
+  - intent: bot_challenge
+    examples: |
+      - are you a bot?
+      - are you a human?
+      - am I talking to a bot?
+      - am I talking to a human?
+      - who are you?
+      - tell me about yourself
+      - who is jack
+      - who am i talking to
+
+  - intent: thanks
+    examples: |
+      - thanks
+      - thank you
+      - thnx
+      - thx
+      - okay thank you
+      - okay thanks
+      - thanks so much
+      - thank you so much
+      - you did a good job
+      - good job!
+      - I think you really did a good job!
+      - thanks for the fun fact
+      - thank you for the fun fact
+
+  - intent: out_of_domain
+    examples: |
+     - how to apply to graduate school
+     - I want to know about the course schedule
+     - medical school
+     - law school
+     - washington dc
+     - DC
+     - meal plan
+     - how is the food
+     - religion
+     - religious
+     - what is an example of a student schedule
+     - how many dining halls are there
+     - does georgetown have sororities
+     - does georgetown have greek like
+     - can i join a frat
+     - environment
+     - where is the library
+     - how many total students
+     - why do people go to georgetown
+     - study abroad
+     - graduate school
+     - masters
+     - phd
+     - greek life
+     - dean
+     - who is the dean
+     - advisor
+     - orientation
+     - freshman orientation
+
+  - intent: mood_good
+    examples: |
+     - i am good
+     - i am great
+     - i am doing well
+     - alright
+     - perfect
+     - i’m great
+     - i am doing fine
+     - fine
+     - good
+     - soso
+     - not bad
+     - i'm good how are you
+     - hey jack, i'm great! how are you?
+     - hi hi, i'm good!
+     - hey jack the buldog, i'm great
+     - hi jack, i'm great how are you
+
+  - intent: mood_bad
+    examples: |
+     - i am sad
+     - i am not great
+     - i am not doing well
+     - tired
+     - bad
+     - depressed
+     - not good
+     - stressful
+     - i’m sad
+     - stressed
+     - exhausted
+     - i am not good how are you
+     - hey jack, i am not doing well
+     - hey jack the bulldog, i'm not doing well
+     - hi jack the bulldog, i'm tired
+
+  - intent: close_bot
+    examples: |
+      - cancel
+      - nevermind
+      - stop
+      - quit
+      - cancel request
+      - i give up
+
+  - intent: start_over
+    examples: |
+      - reset
+      - restart
+      - go back
+      - start over
+      - start
+      - begin
+      - i want to reset
+      - from the beginning
+
+  - intent: jack
+    examples: |
+      - jack
+      - who is jack
+      - who are you
+      - who am i talking to
+      - tell me about yourself jack
+      - are you a real dog
+      - who is jack
+      - are you the mascot
+
+  - intent: request_agent
+    examples: |
+      - request agent
+      - i want to speak to someone
+      - representative
+      - talk to representative
+      - i'd like to speak to someone
+      - real person
+      - i want to talk to a real person
+      - can i speak with a representative
+      - agent
+      - human
+      - i'd like to talk to a human
+      - let me talk to a human
+
+  - intent: president
+    examples: |
+      - who is the current president of georgetown
+      - georgetown president
+      - president
+      - head of georgetown
+      - president of georgetown
+      - who is the president of Georgetown
+
+  - intent: founding_date
+    examples: |
+      - what year was georgetown founded
+      - when was georgetown established
+      - what is the founding year of georgetown
+      - when did georgetown become a school
+      - when was georgetown founded
+      - history of georgetown
+      - school history
+      - background
+      - tell me about georgetown's history
+
+# beginning of new examples
+
+# transfer intents (1)
+  - intent: transfer_interview
+    examples: |
+      - do transfer students need to do an interview
+      - do transfer students have to do an interview
+      - are interviews required for transfer students
+      - are interviews mandatory for transfer students
+      - are interviews optional for transfer students
+      - transfer student interview
+      - transfer interview
+      - transfer interviews
+
+  - intent: transfer_reqmaterials
+    examples: |
+      - what do i need to submit for the transfer application
+      - how do i apply as a transfer student
+      - what do i need to turn in for the transfer application
+      - transfer application requirements
+      - I'd like to transfer to georgetown
+      - transfer student application requirements
+      - how do i apply to transfer to georgetown
+      - how do i apply to be a transfer student
+      - transfer student application
+      - I'm a transder student
+      - transfer student
+      - transfer
+      - application fee for transfer student
+
+  - intent: transfer_appnumbers
+    examples: |
+      - how many transfer students
+      - how many transfers
+      - do you accept a lot of transfer students
+      - how many accepted transfer students
+      - are you accepting transfer students
+      - does georgetown accept transfer students
+      - how do i transfer into georgetown
+
+  - intent: transfer_expectations
+    examples: |
+      - what gpa is required for transfer students
+      - what grades are required for transfer students
+      - what does georgetown look for in transfer
+
+# dates and deadlines intents (2)
+
+  - intent: dates_earlyaction
+    examples: |
+       - early action application
+       - early action apps
+       - when are early action apps due
+       - early action
+       - early action deadline
+       - when is the deadline for early action
+       - when is this year's deadline for early action
+       - when is the early action application due
+
+  - intent: dates_regulardecision
+    examples: |
+     - regular decision
+     - when are regular decision apps due
+     - when are regular decision applications due
+     - when is the deadline for regular decision
+     - when is the application due
+     - i'd like to know more about application deadline
+     - normal application
+     - when's the application deadline
+     - when is the application deadline
+     - i was wondering about the application
+
+  - intent: dates_replydate
+    examples: |
+     - when do admitted students need to make a decision
+     - when do i need to decide
+     - when should I decide
+     - when do i need to accept my offer
+
+  - intent: dates_international
+    examples: |
+     - when is the international student application due
+     - when's the deadline for international students
+     - deadline for international student
+     - international student deadline
+     - when is the international student application deadline
+     - deadline for international students
+     - deadline for international student application
+     - when should i apply as an international student
+
+  - intent: dates_transfers
+    examples: |
+      - when is the transfer app due
+      - when is the transfer application due
+      - when is the transfer app deadline
+      - when is the transfer application deadline
+      - when is the deadline for the transfer student application
+      - what is the deadline for the transfer student application
+      - when do i need to turn in the transfer application
+      - how about the deadline for transfer applications
+      - what about the deadling for the application for transfer students
+
+  - intent: dates_accepted
+    examples: |
+      - when are acceptances announced
+      - when will i know if i got in
+      - when do acceptance letters come out
+      - when will i be notified if i was accepted
+      - how long do i have to wait until i know if i got in
+      - decision
+      - decision date
+      - accepted
+      - i already applied for georgetown, i'd like to know the decision date
+      - what day are acceptance letters released
+      - what date do acceptance letters come out
+      - when will i know if i will be admitted
+      - what about the day that the acceptance letters come out
+
+  - intent: dates_general
+    examples: |
+      - application dates and deadlines
+      - application dates
+      - application deadlines
+      - app dates and deadlines
+      - what about the deadline for application
+      - when are application deadlines
+      - when are the applications due
+
+
+  # application requirements intents (3)
+
+  - intent: appreqs_interview
+    examples: |
+     - do applicants need to do an interview
+     - are interviews required
+     - is there an interview
+     - interview
+     - what about interviews
+
+  - intent: appreqs_reqdocs
+    examples: |
+     - what do i need to submit for the application
+     - what are the required materials for the application
+     - required documents
+     - supplementary materials
+     - checklist
+     - what do I need to turn in
+     - what do i need to submit
+     - application checklist
+     - application requirements
+     - how do i apply
+     - how can i apply
+     - application fee
+     - is the fee refundable?
+     - application requirement
+     - what is required for the application
+     - common app
+     - common application
+     - application details
+     - does georgetown use the common app
+
+
+  - intent: appreqs_grades
+    examples: |
+     - what grades do i need to get in
+     - what is the minimum gpa
+     - GPA
+     - gpa
+     - grade point average
+     - what is the lowest test score
+     - sat score
+     - act score
+     - SAT score
+     - ACT score
+     - how smart do you have to be
+     - do i need high grades
+     - percentile
+     - lowest gpa
+
+# contact intents (4)
+
+  - intent: contact_phone
+    examples: |
+     - What's your contact number?
+     - What is your contact number?
+     - How can I contact you?
+     - contact
+     - contact information
+     - contact number
+     - phone number
+     - phone
+     - telephone
+     - office hours
+     - office time
+     - When can I contact you?
+     - When do you guys work?
+     - What's the working hour?
+     - I'd like to talk to someone.
+     - What's the contact information?
+     - what about your phone number
+     - how can i call the office
+     - what number can i reach the admissions office at
+
+  - intent: contact_address
+    examples: |
+     - what's your mailing address?
+     - what is the mailing address?
+     - where should I mail my transcripts?
+     - where's the admission office?
+     - address
+     - mailing address
+     - shipping address
+     - what's the address of the admissions office?
+     - where should I mail the documents?
+     - where should I mail the application documents?
+     - to where do i send documents
+
+  - intent: contact_email
+    examples: |
+     - what is your email address
+     - who should i email
+     - how do i reach the admissions office via email
+     - email
+     - e-mail
+     - what is the admissions office email
+     - where should i send an email
+     - to whom should i send an email
+
+  - intent: contact_general
+    examples: |
+      - contact info
+      - contact information
+      - i would like to know your office's contact information
+      - i'd like contact information please
+      - can you give me your contact information
+      - what about contact
+      - how do i contact the office directly
+
+# housing intents (5)
+
+  - intent: housing_fr
+    examples: |
+     - where do [first years live](housing)
+     - where do [freshmen live](housing)
+     - first year [housing](housing)
+     - [freshmen housing](housing)
+     - [dorms](housing)
+     - [freshman dorms](housing)
+     - what are the [freshman dorms](housing)
+     - housing
+     - where to live
+     - where do students live?
+     - what about [student housing](housing)
+     - When should i apply for housing?
+     - When's the deadline to apply for housing?
+     - roommates
+     - who can i live with
+     - roommate
+     - live together
+     - who will i live with
+
+  - intent: housing_upperclass
+    examples: |
+     - where do upperclassmen live
+     - upperclassmen housing
+     - apartments
+     - junior housing
+     - senior housing
+     - sophomore housing
+
+  - intent: housing_offcampus
+    examples: |
+     - can students live off campus
+     - can students live in townhouses
+     - do students live outside of georgetown
+     - do students live off campus
+     - can i live off-campus?
+     - is there any housing near the campus
+     - is there any apartmants around the campus
+     - where can students live off campus
+     - do students commute
+     - do student live in other neighborhoods
+     - where can i live off campus
+     - what if i live nearby
+
+  - intent: housing_requirement
+    examples: |
+      - housing requirement
+      - housing requirements
+      - are you required to live on campus
+      - how long do i have to live on campus
+      - campus living
+      - do i need to live in a dorm
+      - can i not live in a dorm
+      - do i have to live on campus all four years
+      - can i live somewhere else
+
+# student life intents (6)
+
+  - intent: studentlife_clubs
+    examples: |
+     - what clubs
+     - school clubs
+     - how do students spend their time
+     - clubs
+     - organizations
+     - i'm interested in figure skating, is there any school clubs I can join?
+     - what about clubs
+     - student clubs
+     - student organizations
+     - free time
+     - outside of class
+     - what clubs does georgetown have
+     - how many clubs does georgetown have
+     - does georgetown have a lot of clubs
+     - extra curricular
+     - extracurricular activities
+
+  - intent: studentlife_sports
+    examples: |
+     - does georgetown have club sports
+     - does georgetown have intramural sports
+     - club team
+     - intramural team
+     - athletic
+     - athletic clubs
+
+  - intent: studentlife_athletics
+    examples: |
+     - what division is georgetown
+     - is georgetown divison 1
+     - what conference is georgetown
+     - varsity sports
+     - athletics
+     - georgetown athletics
+     - does georgetown have a good sports program
+     - sports
+     - georgetown basketball
+     - NCAA
+     - what about sports
+
+  - intent: studentlife_studies
+    examples: |
+     - major
+     - minor
+     - majors
+     - minors
+     - degree
+     - study
+     - studies
+     - what majors are there
+     - what can i major in
+     - can i major in
+     - what can i study
+     - what subjects are available
+     - what majors do you offer
+
+  - intent: studentlife_arts
+    examples: |
+     - music
+     - theater
+     - performing arts
+     - are there a lot of performances at georgetown
+     - do i have to audition to join acting
+     - musical
+     - does georgetown have a band
+     - can i join a singing group
+     - sing
+     - does georgetown have a dance team
+     - do you have a dance prorgam
+
+  - intent: studentlife_general
+    examples: |
+     - [student life](activities)
+     - [hobbies](activities)
+     - what can i do
+     - [school activities](activities)
+     - what can i do at georgetown
+     - [activities](activities)
+     - [activity](activities)
+     - what can i do on campus
+     - what can i do at gu
+
+# admission statistics intents (7)
+
+  - intent: stats_admitted
+    examples: |
+     - what percentage of applicants are accepted
+     - what's the percentage of application
+     - what's the ratio of admission
+     - how many students are admitted each year
+     - acceptance rate
+     - how many students are at georgetown
+     - what percent of applicants are accepted
+     - admissions statistics
+     - admission stats
+     - admissions stats
+     - admission statistics
+     - how prestigious is georgetown
+     - how hard is it to get into georgetown
+     - top of my class
+     - what is the probability of getting in
+     - what are the chances of being accepted
+     - how many people get in
+     - how many people are rejected
+     - how many applicants are waitlisted
+
+# international students intents (8)
+
+  - intent: international_interview
+    examples: |
+     - do international students need to do an interview
+     - do international students have to do an interview
+     - are interviews required for international
+     - are interviews mandatory for international
+     - are interviews optional for international
+     - international student interview
+
+  - intent: international_reqdocs
+    examples: |
+     - what do i need to submit for the international student application
+     - how do i apply as an international student
+     - what do i need to turn in for the international student application
+     - international student application requirements
+     - international student app requirements
+     - international students
+     - international student application
+     - what is required for international students
+
+  - intent: international_appnumbers
+    examples: |
+     - how many international students
+     - do you accept a lot of international students
+     - do you accept international students
+     - does georgetown accept international students
+     - does georgetown have a lot of international students
+
+  - intent: international_tests
+    examples: |
+     - are standardized tests required
+     - are standardized tests scores required
+     - do i need to submit test scores
+     - sat code
+     - act code
+     - SAT
+     - ACT
+     - english proficiency
+     - language test
+     - language requirement
+     - ielts test
+     - IELTS exam
+     - toefl score
+     - TOEFL
+
+
+# visit intents (9)
+
+  - intent: visit_campus
+    examples: |
+     - visit campus
+     - campus visit
+     - visit georgetown
+     - I'd like to schedule a visit to Georgetown.
+     - How can I visit Georgetown?
+     - I'd like to visit Georgetown.
+     - Is there a virtual tour option?
+     - What is the campus like?
+     - Schedule a tour.
+     - visit the campus
+     - visit georgetown
+     - Do you have a campus map?
+     - Group visits
+     - how can i visit campus
+     - schedule a tour
+     - visit the campus
+     - visit the school
+     - do you have a campus map
+     - group visit
+     - campus visits
+     - virtual visit
+     - visit virtually
+     - can i see campus online
+     - what if i cannot come to DC
+     - what if i can't visit in person
+     - is there a virtual tour option
+     - can i visit georgetown virtuallly
+     - information session
+
+# financial aid intents (10)
+
+  - intent: financial_aid
+    examples: |
+     - financial
+     - fafsa
+     - FAFSA
+     - pay for school
+     - Do you provide scholarships?
+     - Do you have scholarships?
+     - I'd like to learn more about scholarships.
+     - scholarships
+     - financial aid
+     - How can I apply for financial aid?
+     - Does the school provide financial aid?
+     - When is the deadline to apply for financial aid?
+     - Do you provide financial aid?
+     - Does Georgetown have financial aid?
+     - what about finincial aids?
+     - financial aid options
+
+# new category intents (11)
+
+  - intent: tuition
+    examples: |
+     - tuition
+     - cost
+     - how much does it cost to go to georgetown
+     - how much is tuition
+     - how much do i have to pay to go to georgetown
+     - tuition and fees
+     - cost of attendance
+     - what is the tuition
+
+  - intent: mealplan
+    examples: |
+      - tuition
+      - cost
+      - how much does it cost to go to georgetown
+      - how much is tuition
+
+  - intent: transportation
+    examples: |
+      - transport
+      - transportation
+      - commute
+      - how to get to campus
+      - driving
+      - bus
+      - metro
+      - car
+      - public transportation
+      - transportation services
+      - GUTS
+      - transportation services
+
+  - intent: diversity
+    examples: |
+      - diversity
+      - diverse
+      - PWI
+      - predominately white institution
+      - multiculrtural
+      - is georgetown diverse
+      - people of color
+      - BIPOC
+      - poc
+      - how diverse is georgetown
+      - is georgetown diverse

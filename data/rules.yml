@@ -1,0 +1,42 @@
+version: "3.1"
+
+rules:
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: handling out of domain
+  steps:
+   - intent: out_of_domain
+   - action: utter_out_of_domain
+
+- rule: thank you + you’re welcome
+  steps:
+   - intent: thanks
+   - action: utter_urwelcome
+
+- rule: Ask the user to rephrase whenever they send a message with low NLU confidence
+  steps:
+  - intent: nlu_fallback
+  - action: utter_please_rephrase
+
+- rule: contact_general
+  steps:
+  - intent: contact_general
+  - action: utter_contact_general
+
+- rule: student life general
+  steps:
+  - intent: studentlife_general
+  - action: utter_studentlife_general
+
+- rule: fun fact
+  steps:
+  - intent: fun_fact
+  - action: utter_funfact
+
+
+
+

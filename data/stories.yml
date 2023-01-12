@@ -1,0 +1,380 @@
+
+version: "3.1"
+
+stories:
+
+#greeting stories
+
+- story: Say greeting + image when the user says greeting
+#  conversation_start: true
+  steps:
+  - intent: greet # hi
+  - action: utter_greet # Hi, I’m Jack the Bulldog, the official mascot of Georgetown here to answer your questions for the Undergraduate Admissions Office. How are you today?"
+
+
+- story: user says they are good
+  steps:
+  - intent: mood_good # i am good
+  - action: utter_mood_good_response # respond w answer
+  - action: utter_listoftopics
+  - action: utter_askfunfact
+  - action: utter_howcanihelp
+
+- story: user says they are not good
+  steps:
+  - intent: mood_bad # i am sad
+  - action: utter_mood_bad_response # respond w answer
+  - action: utter_listoftopics
+  - action: utter_askfunfact
+  - action: utter_howcanihelp
+
+- story: user requests to close bot
+  steps:
+  - intent: close_bot
+  - action: utter_sorry
+  - action: utter_funfact
+
+- story: user requests start over
+  steps:
+  - intent: start_over
+  - action: utter_greet
+  - action: utter_listoftopics
+  - action: utter_askfunfact
+  - action: utter_howcanihelp
+
+- story: questions about jack
+  steps:
+  - intent: jack
+  - action: utter_jack
+  - action: utter_listoftopics
+  - action: utter_askfunfact
+  - action: utter_howcanihelp
+
+- story: request agent
+  steps:
+  - intent: request_agent
+  - action: utter_request_agent
+  - action: utter_confirm
+  - checkpoint: check_answered_question
+
+- story: president
+  steps:
+  - intent: president
+  - action: utter_president
+  - action: utter_confirm
+  - checkpoint: check_answered_question
+
+- story: foudning date
+  steps:
+  - intent: founding_date
+  - action: utter_founding_date
+  - action: utter_confirm
+  - checkpoint: check_answered_question
+
+#transfer stories
+
+- story: transfer interview
+  steps:
+  - intent: transfer_interview # i want to know about transfer interviews
+  - action: utter_transfer_interview # respond w answer
+  - action: utter_confirm # did that answer your question?
+  - checkpoint: check_answered_question
+
+- story: transfer required materials
+  steps:
+  - intent: transfer_reqmaterials
+  - action: utter_transfer_reqmaterials
+  - action: utter_confirm # did that answer your question?
+  - checkpoint: check_answered_question
+
+- story: transfer application numbers
+  steps:
+  - intent: transfer_appnumbers
+  - action: utter_transfer_appnumbers
+  - action: utter_confirm # did that answer your question?
+  - checkpoint: check_answered_question
+
+- story: transfer profile expectations
+  steps:
+  - intent: transfer_expectations
+  - action: utter_transfer_expectations
+  - action: utter_confirm # did that answer your question?
+  - checkpoint: check_answered_question
+
+# dates and deadlines stories
+
+- story: early action
+  steps:
+  - intent: dates_earlyaction
+  - action: utter_dates_earlyaction
+  - action: utter_confirm # did that answer your question?
+  - checkpoint: check_answered_question
+
+- story: regular decision
+  steps:
+  - intent: dates_regulardecision
+  - action: utter_dates_regulardecision
+  - action: utter_confirm # did that answer your question?
+  - checkpoint: check_answered_question
+
+- story: reply date
+  steps:
+  - intent: dates_replydate
+  - action: utter_dates_replydate
+  - action: utter_confirm # did that answer your question?
+  - checkpoint: check_answered_question
+
+- story: transfer application dates
+  steps:
+  - intent: dates_transfers
+  - action: utter_dates_transfers
+  - action: utter_confirm # did that answer your question?
+  - checkpoint: check_answered_question
+
+- story: international application dates
+  steps:
+  - intent: dates_international
+  - action: utter_dates_international
+  - action: utter_confirm # did that answer your question?
+  - checkpoint: check_answered_question
+
+- story: general date
+  steps:
+  - intent: dates_general
+  - action: utter_dates_general
+  - action: utter_confirm # did that answer your question?
+  - checkpoint: check_answered_question
+
+# application requirements stories
+
+- story: app reqs interview
+  steps:
+  - intent: appreqs_interview
+  - action: utter_appreqs_interview
+  - action: utter_confirm # did that answer your question?
+  - checkpoint: check_answered_question
+
+- story: app reqs required documents
+  steps:
+  - intent: appreqs_reqdocs
+  - action: utter_appreqs_reqdocs
+  - action: utter_confirm # did that answer your question?
+  - checkpoint: check_answered_question
+
+- story: app reqs grades
+  steps:
+  - intent: appreqs_grades
+  - action: utter_appreqs_grades
+  - action: utter_confirm # did that answer your question?
+  - checkpoint: check_answered_question
+
+# application requirements stories
+
+- story: app reqs interview
+  steps:
+  - intent: appreqs_interview
+  - action: utter_appreqs_interview
+  - action: utter_confirm # did that answer your question?
+  - checkpoint: check_answered_question
+
+# admissions statistics stories
+
+- story: admissions statistics
+  steps:
+  - intent: stats_admitted
+  - action: utter_stats_admitted
+  - action: utter_confirm # did that answer your question?
+  - checkpoint: check_answered_question
+
+# international students stories
+
+- story: international students interview
+  steps:
+  - intent: international_interview
+  - action: utter_international_interview
+  - action: utter_confirm # did that answer your question?
+  - checkpoint: check_answered_question
+
+- story: international students required documents
+  steps:
+  - intent: international_reqdocs
+  - action: utter_international_reqdocs
+  - action: utter_confirm # did that answer your question?
+  - checkpoint: check_answered_question
+
+- story: international students application numbers
+  steps:
+  - intent: international_appnumbers
+  - action: utter_international_appnumbers
+  - action: utter_confirm # did that answer your question?
+  - checkpoint: check_answered_question
+
+- story: international students tests
+  steps:
+  - intent: international_tests
+  - action: utter_international_tests
+  - action: utter_confirm # did that answer your question?
+  - checkpoint: check_answered_question
+
+# international students stories
+
+- story: contact phone
+  steps:
+  - intent: contact_phone
+  - action: utter_contact_phone
+  - action: utter_confirm # did that answer your question?
+  - checkpoint: check_answered_question
+
+- story: contact address
+  steps:
+  - intent: contact_address
+  - action: utter_contact_address
+  - action: utter_confirm # did that answer your question?
+  - checkpoint: check_answered_question
+
+- story: contact_email
+  steps:
+  - intent: contact_email
+  - action: utter_contact_email
+  - action: utter_confirm # did that answer your question?
+  - checkpoint: check_answered_question
+
+# housing stories
+
+- story: housing frosh
+  steps:
+  - intent: housing_fr
+  - action: utter_housing_fr
+  - action: utter_housing_roommates
+  - action: utter_confirm # did that answer your question?
+  - checkpoint: check_answered_question
+
+- story: housing upperclass
+  steps:
+  - intent: housing_upperclass
+  - action: utter_housing_upperclass
+  - action: utter_confirm # did that answer your question?
+  - checkpoint: check_answered_question
+
+- story: housing off campus
+  steps:
+  - intent: housing_offcampus
+  - action: utter_housing_offcampus
+  - action: utter_confirm # did that answer your question?
+  - checkpoint: check_answered_question
+
+- story: housing requirements
+  steps:
+  - intent: housing_requirement
+  - action: utter_housing_requirement
+  - action: utter_housing_update
+  - action: utter_confirm # did that answer your question?
+  - checkpoint: check_answered_question
+
+# student life stories
+
+- story: student life clubs
+  steps:
+  - intent: studentlife_clubs
+  - action: utter_studentlife_clubs
+  - action: utter_confirm # did that answer your question?
+  - checkpoint: check_answered_question
+
+- story: student life sports
+  steps:
+  - intent: studentlife_sports
+  - action: utter_studentlife_sports
+  - action: utter_confirm # did that answer your question?
+  - checkpoint: check_answered_question
+
+- story: student life athletics
+  steps:
+  - intent: studentlife_athletics
+  - action: utter_studentlife_athletics
+  - action: utter_confirm # did that answer your question?
+  - checkpoint: check_answered_question
+
+- story: student life studies
+  steps:
+  - intent: studentlife_studies
+  - action: utter_studentlife_studies
+  - action: utter_confirm # did that answer your question?
+  - checkpoint: check_answered_question
+
+- story: student life arts
+  steps:
+  - intent: studentlife_arts
+  - action: utter_studentlife_arts
+  - action: utter_confirm # did that answer your question?
+  - checkpoint: check_answered_question
+
+# financial aid stories
+
+- story: financial aid
+  steps:
+  - intent: financial_aid
+  - action: utter_financial_aid
+  - action: utter_confirm # did that answer your question?
+  - checkpoint: check_answered_question
+
+# visit stories
+
+- story: campus visits
+  steps:
+  - intent: visit_campus
+  - action: utter_visit_campus
+  - action: utter_confirm # did that answer your question?
+  - checkpoint: check_answered_question
+
+# new stories from feedback
+
+- story: tuition
+  steps:
+  - intent: tuition
+  - action: utter_tuition
+  - action: utter_confirm # did that answer your question?
+  - checkpoint: check_answered_question
+
+- story: mealplan
+  steps:
+  - intent: mealplan
+  - action: utter_mealplan
+  - action: utter_confirm # did that answer your question?
+  - checkpoint: check_answered_question
+
+- story: transportation
+  steps:
+  - intent: transportation
+  - action: utter_transportation
+  - action: utter_confirm # did that answer your question?
+  - checkpoint: check_answered_question
+
+- story: diversity
+  steps:
+  - intent: diversity
+  - action: utter_diversity
+  - action: utter_confirm # did that answer your question?
+  - checkpoint: check_answered_question
+
+# checkpoint later steps
+
+- story: bot answered user question
+  steps:
+  - checkpoint: check_answered_question
+  - intent: affirm # yes, it did answer my question
+  - action: utter_great # great
+  - action: utter_followup # If you have additional questions, please ask them now. If not, please say goodbye to end the chat!
+
+- story: bot did not answered user question
+  steps:
+  - checkpoint: check_answered_question
+  - intent: deny # no, it didn't answer my question
+  - action: utter_didnot_answer
+  - action: utter_listoftopics
+  - action: utter_askfunfact 
+
+- story: goodbye path/end of conversation
+  steps:
+  - intent: goodbye # yes, it did answer my question
+  - action: utter_goodbye
+  - action: utter_funfact # random fun fact selected
